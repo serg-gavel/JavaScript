@@ -1,2 +1,2 @@
-# JavaScript-section
-Repetition of the mother doctrine
+## JavaScript-section
+###### Repetition of the mother doctrine
