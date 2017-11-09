@@ -26,12 +26,6 @@ function Fruit(name, color, shape) {
 
 var apple = new Fruit('apple', 'red', 'round');
 console.log(apple);
+var melon = new Fruit('melon', 'green', 'round');
+console.log(melon);
 
-function Car(carName, carClass, carEngine, yearBuilt){
-    this.carName=carName;
-    this.carClass=carClass;
-    this.carEngine=carEngine;
-    this.yearBuilt=yearBuilt;
-}
-var myCar = new Car('Volkswagen Passat CC','E-class','2.0 L TDI I4','2017');
-console.log(myCar);
