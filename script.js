@@ -23,9 +23,25 @@ function Fruit(name, color, shape) {
     this.shape = shape;
 
 }
-
 var apple = new Fruit('apple', 'red', 'round');
 console.log(apple);
-var melon = new Fruit('melon', 'green', 'round');
-console.log(melon);
+
+var users = [
+    {
+        name: 'Neo',
+        age: 30
+    },
+    {
+        name: 'Trinity',
+        age: 29
+    },
+    {
+        name: 'Morpheus',
+        age: 48
+    }
+
+];
+console.log(users[1].name);
+
+
 
