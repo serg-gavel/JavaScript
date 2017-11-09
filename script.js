@@ -14,13 +14,24 @@ var person = {
     }
 };
 console.log(person.fullName());
-//Object constructor
-var apple  = new Object();
-apple.color = 'green';
-apple.shape = 'round';
 
-apple.describe = function () {
-    return 'An apple is the color '+this.color+' and is ' +
-        'the shape is '+this.shape;
-};
-console.log(apple.describe());
+
+//Constructor pattern
+function Fruit(name, color, shape) {
+    this.name = name;
+    this.color = color;
+    this.shape = shape;
+
+}
+
+var apple = new Fruit('apple', 'red', 'round');
+console.log(apple);
+
+function Car(carName, carClass, carEngine, yearBuilt){
+    this.carName=carName;
+    this.carClass=carClass;
+    this.carEngine=carEngine;
+    this.yearBuilt=yearBuilt;
+}
+var myCar = new Car('Volkswagen Passat CC','E-class','2.0 L TDI I4','2017');
+console.log(myCar);
