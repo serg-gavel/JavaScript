@@ -9,6 +9,9 @@ var person = {
         street: '1325 Something st.',
         city: 'Los Angeles',
         state: 'CA'
+    },
+    fullName : function () {
+        return this.firstName +' '+this.lastName;
     }
 };
-console.log(person.address.state);
+console.log(person.fullName());
