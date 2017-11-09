@@ -1,5 +1,4 @@
 //Object literal
-
 var person = {
     firstName : 'Sergey',
     lastName : 'Gavel',
@@ -15,3 +14,13 @@ var person = {
     }
 };
 console.log(person.fullName());
+//Object constructor
+var apple  = new Object();
+apple.color = 'green';
+apple.shape = 'round';
+
+apple.describe = function () {
+    return 'An apple is the color '+this.color+' and is ' +
+        'the shape is '+this.shape;
+};
+console.log(apple.describe());
