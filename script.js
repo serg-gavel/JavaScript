@@ -43,14 +43,14 @@ var users = [
 ];
 console.log(users[1].name);
 
-var selectBackground = document.getElementById('background');
+var selectBg = document.getElementById('background');
 
-selectBackground.addEventListener("change", changeBackground);
+selectBg.addEventListener("change", changeBg);
 
-console.log(selectBackground.value);
-function changeBackground() {
+// console.log(selectBg.value);
+function changeBg() {
     var heading = document.getElementById('heading');
-    heading.style.color = selectBackground.value;
+    heading.style.color = selectBg.value;
 }
 
 
