@@ -23,6 +23,11 @@ function saveBookmark(e) {
     //  localStorage.removeItem('test');
     //  console.log(localStorage.getItem('test'));
 
-
+    //Test if bookmarks is null
+    if(localStorage.getItem('bookmarks') === null){
+        //Init array
+        var bookmarks = [];
+        bookmarks.push();
+    }
     
 }
