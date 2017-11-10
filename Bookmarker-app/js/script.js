@@ -27,7 +27,10 @@ function saveBookmark(e) {
     if(localStorage.getItem('bookmarks') === null){
         //Init array
         var bookmarks = [];
-        bookmarks.push();
+        //Add to array
+        bookmarks.push(bookmark);
+        //Set to localStorage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
     
 }
