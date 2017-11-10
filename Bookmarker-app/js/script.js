@@ -1,11 +1,14 @@
-//Listen for form submit
+// Body on load
+window.onload = fetchBookmarks();
+
+// Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
-//Save bookmark
+// Save bookmark
 function saveBookmark(e) {
     e.preventDefault();
 
-    //Get form values
+    // Get form values
     var siteName = document.getElementById('siteName').value;
     var siteURL = document.getElementById('siteURL').value;
 
@@ -17,27 +20,42 @@ function saveBookmark(e) {
     console.log(bookmark);
 
 
-    //Local storage Test
-    //  localStorage.setItem('test', 'Hello World!');
-    //  console.log(localStorage.getItem('test'));
-    //  localStorage.removeItem('test');
-    //  console.log(localStorage.getItem('test'));
+    // Local storage Test
+    //   localStorage.setItem('test', 'Hello World!');
+    //   console.log(localStorage.getItem('test'));
+    //   localStorage.removeItem('test');
+    //   console.log(localStorage.getItem('test'));
 
-    //Test if bookmarks is null
+    // Test if bookmarks is null
     if(localStorage.getItem('bookmarks') === null){
-        //Init array
+        // Init array
         var bookmarks = [];
-        //Add to array
+        // Add to array
         bookmarks.push(bookmark);
-        //Set to localStorage
+        // Set to localStorage
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }else{
-        //Get bookmarks from localStorage
+        // Get bookmarks from localStorage
         bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-        //Add bookmark to array
+        // Add bookmark to array
         bookmarks.push(bookmark);
         // Re-set back to localStorage
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
     
+}
+
+// Fetch bookmarks
+function fetchBookmarks() {
+    // Get bookmarks from localStorage
+    bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    // get output id
+    var bookmarksResults = document.getElementById('bookmarksResults');
+
+    // Build output
+    bookmarksResults.innerHTML = '';
+    for(var i = 0; i < bookmarks.length; i++){
+        var name = bookmarks[i].name;
+        var url = bookmarks[i].url;
+    }
 }
