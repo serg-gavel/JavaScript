@@ -24,6 +24,9 @@ body {
     margin-bottom: 0;
     line-height: 3rem;
 }
+.results-block{
+    margin-top: 10px;
+}
 
 /* Custom page footer */
 .footer {

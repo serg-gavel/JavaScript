@@ -44,6 +44,7 @@ function saveBookmark(e) {
     }
     
 }
+// Delete bookmark
 
 // Fetch bookmarks
 function fetchBookmarks() {
@@ -54,10 +55,18 @@ function fetchBookmarks() {
 
     // Build output
     bookmarksResults.innerHTML = '';
-    for(var i = 0; i < bookmarks.length; i++){
-        var name = bookmarks[i].name;
-        var url = bookmarks[i].url;
+    if(bookmarks !== null){
+        for(var i = 0; i < bookmarks.length; i++){
+            var name = bookmarks[i].name;
+            var url = bookmarks[i].url;
 
-        bookmarksResults.innerHTML += name;
+            bookmarksResults.innerHTML += '<div class="card card-body bg-light results-block">\n' +
+                '  <div class="card-block">\n' +
+                '    <h3 class="card-title">'+name+'</h3>\n' +
+                '    <a href="'+url+'" target="_blank" class="btn btn-outline-secondary">Visit website</a>\n' +
+                '    <a id="deleteBookmark" href="#" target="_blank" class="btn btn-outline-danger">Delete</a>\n' +
+                '  </div>\n' +
+                '</div>';
+        }
     }
 }
