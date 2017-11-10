@@ -57,5 +57,7 @@ function fetchBookmarks() {
     for(var i = 0; i < bookmarks.length; i++){
         var name = bookmarks[i].name;
         var url = bookmarks[i].url;
+
+        bookmarksResults.innerHTML += name;
     }
 }
