@@ -2,7 +2,7 @@
 geoCode();
 
 function geoCode() {
-    var location = '22 Main st Boston MA';
+    var location = 'Stepova St, 13 Odesa, Odessa Oblast';
 
     axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
         params:{
@@ -11,7 +11,11 @@ function geoCode() {
         }
     })
         .then(function (response) {
+            // Log full response
             console.log(response);
+
+            // Formatted address
+            console.log(response.data.results[0].formatted_address);
         })
         .catch(function (error) {
             console.log(error);
