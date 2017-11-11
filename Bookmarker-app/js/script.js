@@ -42,7 +42,9 @@ function saveBookmark(e) {
         // Re-set back to localStorage
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
-    
+
+    // Re-fetch bookmarks
+    fetchBookmarks();
 }
 
 // Delete bookmark
