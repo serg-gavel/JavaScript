@@ -6,12 +6,10 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
 // Save bookmark
 function saveBookmark(e) {
-    e.preventDefault();
 
     // Get form values
     var siteName = document.getElementById('siteName').value;
     var siteURL = document.getElementById('siteURL').value;
-
 
     var bookmark = {
         name: siteName,
@@ -45,6 +43,8 @@ function saveBookmark(e) {
 
     // Re-fetch bookmarks
     fetchBookmarks();
+    // Prevent from submitting
+    e.preventDefault();
 }
 
 // Delete bookmark
