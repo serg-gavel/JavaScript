@@ -44,8 +44,20 @@ function saveBookmark(e) {
     }
     
 }
-// Delete bookmark
 
+// Delete bookmark
+function deleteBookmark(url) {
+    // Get bookmarks from localStorage
+    bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    //Loop through bookmarks
+    for(var i = 0; i < bookmarks.length; i++){
+        if(bookmarks[i].url === url){
+            // Remove from array
+            bookmarks.splice(i, 1);
+        }
+    }
+
+}
 // Fetch bookmarks
 function fetchBookmarks() {
     // Get bookmarks from localStorage
@@ -64,7 +76,7 @@ function fetchBookmarks() {
                 '  <div class="card-block">\n' +
                 '    <h3 class="card-title">'+name+'</h3>\n' +
                 '    <a href="'+url+'" target="_blank" class="btn btn-outline-secondary">Visit website</a>\n' +
-                '    <a id="deleteBookmark" href="#" target="_blank" class="btn btn-outline-danger">Delete</a>\n' +
+                '    <a onclick="deleteBookmark(\''+url+'\')" href="#" class="btn btn-outline-danger">Delete</a>\n' +
                 '  </div>\n' +
                 '</div>';
         }
