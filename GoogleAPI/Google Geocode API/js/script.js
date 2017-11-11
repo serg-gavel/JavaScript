@@ -1,5 +1,5 @@
 // Call geocode
-geoCode();
+//geoCode();
 
 function geoCode() {
     var location = 'Stepova St, 13 Odesa, Odessa Oblast';
