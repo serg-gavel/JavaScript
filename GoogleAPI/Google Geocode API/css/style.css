@@ -1,0 +1,13 @@
+#formatted-address,
+#address-components{ margin-top: 15px; margin-left: 5px;}
+#formatted-address ul li{
+    background-color: rgba(236, 255, 135, 0.52);
+}
+#address-components ul li{
+    background-color: rgba(103, 255, 148, 0.52);
+    margin-bottom: 5px;
+}
+#geometry ul li{
+    background-color: rgba(124, 151, 255, 0.52);
+    margin-bottom: 5px;
+}
