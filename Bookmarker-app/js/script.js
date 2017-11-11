@@ -93,7 +93,6 @@ function fetchBookmarks() {
 }
 
 // Validate form
-
 function validateForm(siteName, siteURL) {
     if(!siteName || !siteURL){
         alert('Please fill in the form');
