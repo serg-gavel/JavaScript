@@ -11,12 +11,13 @@ function saveBookmark(e) {
     var siteName = document.getElementById('siteName').value;
     var siteURL = document.getElementById('siteURL').value;
 
+    if(!validateForm(siteName, siteURL)){return false;}
+
     var bookmark = {
         name: siteName,
         url: siteURL
     };
     console.log(bookmark);
-
 
     // Local storage Test
     //   localStorage.setItem('test', 'Hello World!');
@@ -87,4 +88,26 @@ function fetchBookmarks() {
                 '</div>';
         }
     }
+}
+
+// Validate form
+
+function validateForm(siteName, siteURL) {
+    if(!siteName || !siteURL){
+        alert('Please fill in the form');
+        return false;
+    }
+
+    var expression = /[-a-zA-Z0-9@:%_\+.~#?&/=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&/=]*)?/gi;
+    var regex = new RegExp(expression);
+
+    if(!siteURL.match(regex)){
+        alert('Please use a valid URL');
+        return false;
+    }
+    else if(siteName.length < 3){
+        alert('Please write a valid site name');
+        return false;
+    }
+    return true;
 }
