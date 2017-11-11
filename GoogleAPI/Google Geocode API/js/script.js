@@ -1,7 +1,16 @@
 // Call geocode
 //geoCode();
 
-function geoCode() {
+// Get location form
+var locationForm = document.getElementById('location-form');
+
+// Listen for submit
+locationForm.addEventListener('submit', geoCode);
+
+
+function geoCode(e) {
+    // Prevent defaulr
+    e.preventDefault();
     var location = 'Stepova St, 13 Odesa, Odessa Oblast';
 
     axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
