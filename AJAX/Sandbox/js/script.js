@@ -15,7 +15,9 @@ function loadText() {
         // 'this.status' the same like 'xhr.status'
         if(this.status === 200){
             // console.log(this.responseText);
-        document.getElementById('text').innerHTML = this.responseText;
+            document.getElementById('text').innerHTML = this.responseText;
+        } else if(this.status === 404){
+            document.getElementById('text').innerHTML = 'Error 404. (Not Found)';
 
         }
     };
