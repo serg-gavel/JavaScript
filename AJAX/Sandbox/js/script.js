@@ -11,7 +11,10 @@ function loadText() {
         if(this.status === 200){
             console.log(this.responseText);
         }
-    }
+    };
+
+    // Sends request
+    xhr.send();
 }
 // HTTP Statuses :
 // 200: 'OK'
