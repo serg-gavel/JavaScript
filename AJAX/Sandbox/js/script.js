@@ -14,9 +14,17 @@ function loadText() {
     xhr.onload = function () {
         // 'this.status' the same like 'xhr.status'
         if(this.status === 200){
-            console.log(this.responseText);
+            // console.log(this.responseText);
+        document.getElementById('text').innerHTML = this.responseText;
+
         }
     };
+    // Delete text
+     document.getElementById('button-delete').addEventListener('click', deleteText);
+     function deleteText() {
+         document.getElementById('text').innerHTML = ' ';
+         // console.log('delete');
+    }
 
     xhr.onerror = function () {
       console.log('Request Error...');
