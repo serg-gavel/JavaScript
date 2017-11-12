@@ -6,10 +6,27 @@ function loadText() {
     // OPEN - type, url/file, async(true or false)
     xhr.open('GET', 'sample.txt', true);
 
-    // xhr.onload = function () {
-    //     // 'this.status' the same like 'xhr.status'
-    //     if(this.status === 200){
+    // OPTIONAL - used fro loaders
+    xhr.onprogress = function () {
+        console.log('READYSTATE: ', xhr.readyState);
+    };
+
+    xhr.onload = function () {
+        // 'this.status' the same like 'xhr.status'
+        if(this.status === 200){
+            console.log(this.responseText);
+        }
+    };
+
+    xhr.onerror = function () {
+      console.log('Request Error...');
+    };
+
+
+    // xhr.onreadystatechange = function () {
+    //     if(this.readyState === 4 && this.status === 200){
     //         console.log(this.responseText);
+    //         // console.log('READYSTATE: ', xhr.readyState);
     //     }
     // };
 
@@ -17,10 +34,6 @@ function loadText() {
     // 200: 'OK'
     // 403: 'Forbidden'
     // 200: 'Not Found'
-
-    xhr.onreadystatechange = function () {
-
-    };
 
     //readyState values
     // 0: request not initialized
