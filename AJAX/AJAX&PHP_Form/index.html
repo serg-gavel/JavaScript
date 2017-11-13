@@ -9,9 +9,27 @@
 </head>
 <body>
     <button id="button">Get name</button>
-    <hr>
+<hr>
+    <h1>GET form</h1>
     <form method="GET" action="process.php">
-        <input title="" type="text" name="name" id="">
+        <input title="" type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>AJAX GET form</h1>
+    <form method="GET" action="process.php" id="getForm">
+        <input title="" type="text" name="name1" id="name1">
+        <input type="submit" value="Submit">
+    </form>
+    <h1>POST form</h1>
+    <form method="POST" action="process.php">
+        <input title="" type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>AJAX POST form</h1>
+    <form method="POST" action="process.php" id="postForm">
+        <input title="" type="text" name="name2" id="name2">
         <input type="submit" value="Submit">
     </form>
 
