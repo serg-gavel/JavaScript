@@ -2,15 +2,19 @@
   <div id="app">
     <!--<img src="./assets/logo.png">-->
     <!--<router-view/>-->
-    <test></test>
+    <users></users>
+    <!--<test msg="Hello Rufus"></test>-->
   </div>
 </template>
 
 <script>
  import Test from './components/Test'
+ import Users from './components/users.vue'
+
 export default {
   name: 'app',
   components:{
+    Users,
     Test
   }
 }
