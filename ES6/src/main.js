@@ -32,7 +32,7 @@ class Member extends User{
 }
 
 let mike = new Member('mike','mike@hotmail.com','1221214','"Standard"');
-// mike.getPackage();
+mike.getPackage();
 // mike.register();
 
 // TEMPLATE
@@ -51,7 +51,7 @@ document.getElementById('template').innerHTML = template;
 
 // New String & Number Methods
 
-let theString = 'Hello, my name is Sergey and I love JavaScript';
+// let theString = 'Hello, my name is Sergey and I love JavaScript';
 
 // startWith();
 // endsWith();
@@ -72,4 +72,9 @@ let theString = 'Hello, my name is Sergey and I love JavaScript';
 // console.log(Number.isNaN('string'));
 // console.log(Number.isInteger(2));
 
+//Default Params & Spread Operator
 
+function greet($greeting = 'Hello World') {
+    console.log($greeting);
+}
+greet();
