@@ -99,3 +99,18 @@ function test(){
 test(...args1,...args2);
 
 //Set, Map, WeakSet and WeakMap
+
+let myArray = ['JS',33,55];
+let mySet = new Set(myArray);
+
+mySet.add('100');
+mySet.add({a:1, b:2});
+mySet.delete(33);
+// mySet.clear();
+
+console.log(mySet);
+console.log(mySet.size);
+
+mySet.forEach(function (val) {
+    console.log(val);
+});
