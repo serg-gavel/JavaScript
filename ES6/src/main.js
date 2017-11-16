@@ -177,3 +177,9 @@ test(...args1,...args2);
 // add(2,2);
 
 // Promises
+
+// Immediately Resolved Promise
+
+let myPromise = Promise.resolve('Foo');
+
+myPromise.then((resolve) => console.log(resolve));
