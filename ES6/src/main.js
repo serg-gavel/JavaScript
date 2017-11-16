@@ -163,9 +163,17 @@ test(...args1,...args2);
 
 // Arrow Functions
 
-let add = function (a,b) {
-    let sum = a+b;
-    console.log(sum);
-    return false;
-};
-add(2,2);
+// let add = function (a,b) {
+//     let sum = a+b;
+//     console.log(sum);
+//     return false;
+// };
+//
+// let add = (a,b)=>{
+//     let sum = a+b;
+//     console.log(sum);
+//     return false;
+// };
+// add(2,2);
+
+// Promises
