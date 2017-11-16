@@ -1,3 +1,4 @@
+//CLASS
 class User{
     constructor(username, email, password){
         this.username = username;
@@ -33,3 +34,17 @@ class Member extends User{
 let mike = new Member('mike','mike@hotmail.com','1221214','"Standard"');
 mike.getPackage();
 mike.register();
+
+// TEMPLATE
+let name = 'John';
+let lastName = "Doe";
+function makeUppercase(word) {
+    return word.toUpperCase();
+}
+
+let template = `
+<h1>${makeUppercase('Hello')}, ${name.toUpperCase()} ${lastName}</h1>
+<p>This is a simple template in JavaScript</p>
+`;
+
+document.getElementById('template').innerHTML = template;
