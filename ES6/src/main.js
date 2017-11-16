@@ -126,20 +126,37 @@ test(...args1,...args2);
 
 // WeakSet
 
-let carWeakSet = new WeakSet();
+// let carWeakSet = new WeakSet();
+//
+// let car1 = {
+//     make: 'Honda',
+//     model: 'Civic'
+// };
+// carWeakSet.add(car1);
+//
+// let car2 = {
+//     make: 'Dodge',
+//     model: 'Ram'
+// };
+// carWeakSet.add(car2);
+//
+// carWeakSet.delete(car1);
+//
+// console.log(carWeakSet);
+
+// WeakMap
+
+let carWeakMap = new WeakMap();
+
+let key1 = {
+    id: 1
+};
 
 let car1 = {
-    make: 'Honda',
-    model: 'Civic'
-};
-carWeakSet.add(car1);
-
-let car2 = {
     make: 'Dodge',
     model: 'Ram'
 };
-carWeakSet.add(car2);
 
-carWeakSet.delete(car1);
-
-console.log(carWeakSet);
+carWeakMap.set(key1, car1);
+// carWeakMap.delete(key1);
+console.log(carWeakMap);
