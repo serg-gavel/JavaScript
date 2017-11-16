@@ -146,17 +146,26 @@ test(...args1,...args2);
 
 // WeakMap
 
-let carWeakMap = new WeakMap();
+// let carWeakMap = new WeakMap();
+//
+// let key1 = {
+//     id: 1
+// };
+//
+// let car1 = {
+//     make: 'Dodge',
+//     model: 'Ram'
+// };
+//
+// carWeakMap.set(key1, car1);
+// // carWeakMap.delete(key1);
+// console.log(carWeakMap);
 
-let key1 = {
-    id: 1
+// Arrow Functions
+
+let add = function (a,b) {
+    let sum = a+b;
+    console.log(sum);
+    return false;
 };
-
-let car1 = {
-    make: 'Dodge',
-    model: 'Ram'
-};
-
-carWeakMap.set(key1, car1);
-// carWeakMap.delete(key1);
-console.log(carWeakMap);
+add(2,2);
