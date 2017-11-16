@@ -100,17 +100,46 @@ test(...args1,...args2);
 
 //Set, Map, WeakSet and WeakMap
 
-let myArray = ['JS',33,55];
-let mySet = new Set(myArray);
-
-mySet.add('100');
-mySet.add({a:1, b:2});
-mySet.delete(33);
+// Set
+// let myArray = ['JS',33,55];
+// let mySet = new Set(myArray);
+//
+// mySet.add('100');
+// mySet.add({a:1, b:2});
+// mySet.delete(33);
 // mySet.clear();
 
-console.log(mySet);
-console.log(mySet.size);
+// console.log(mySet);
+// console.log(mySet.size);
+//
+// mySet.forEach(function (val) {
+//     console.log(val);
+// });
 
-mySet.forEach(function (val) {
-    console.log(val);
-});
+// Map
+//
+// let myMap = new Map([['a1','Hello'],['b2','Goodbye']]);
+// myMap.set('c3','Foo');
+// myMap.delete('a1');
+//
+// console.log(myMap);
+
+// WeakSet
+
+let carWeakSet = new WeakSet();
+
+let car1 = {
+    make: 'Honda',
+    model: 'Civic'
+};
+carWeakSet.add(car1);
+
+let car2 = {
+    make: 'Dodge',
+    model: 'Ram'
+};
+carWeakSet.add(car2);
+
+carWeakSet.delete(car1);
+
+console.log(carWeakSet);
