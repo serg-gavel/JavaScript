@@ -1,21 +1,11 @@
-// function testVar() {
-//     var a = 20;
-//     if(true){
-//         var a = 30;
-//         console.log(a);
-//     }
-//     console.log(a);
-// }
-//
-// testVar();
-
-
-function testLet() {
-    let a = 20;
-    if(true){
-        let a = 30;
-        console.log(a);
+class User{
+    constructor(username, email, password){
+        thiis.username = username;
+        thiis.email = email;
+        thiis.password = password;
     }
-    console.log(a);
+
+    register(){
+        console.log(this.username+ ' is now registered');
+    }
 }
-testLet();
