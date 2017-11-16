@@ -75,10 +75,10 @@ document.getElementById('template').innerHTML = template;
 //Default Params & Spread Operator
 
 // Default Params
-function greet($greeting = 'Hello World') {
-    console.log($greeting);
-}
-greet();
+// function greet($greeting = 'Hello World') {
+//     console.log($greeting);
+// }
+// greet();
 
 
 // ES5
@@ -90,13 +90,13 @@ greet();
 //
 // test.apply(null, args);
 // Spread Operator
-let args1 = [1,2,3];
-let args2 =[4,5,6];
-function test(){
-    console.log(args1+','+args2);
-}
-
-test(...args1,...args2);
+// let args1 = [1,2,3];
+// let args2 =[4,5,6];
+// function test(){
+//     console.log(args1+','+args2);
+// }
+//
+// test(...args1,...args2);
 
 //Set, Map, WeakSet and WeakMap
 
@@ -180,6 +180,44 @@ test(...args1,...args2);
 
 // Immediately Resolved Promise
 
-let myPromise = Promise.resolve('Foo');
+// let myPromise = Promise.resolve('Foo');
+//
+// myPromise.then((resolve) => console.log(resolve));
 
-myPromise.then((resolve) => console.log(resolve));
+// let myPromise = new Promise(function (resolve, reject) {
+//     setTimeout(()=> resolve(4), 2000);
+// });
+//
+// myPromise.then((res)=>{
+//     res+=3;
+//     console.log(res);
+// });
+
+function getData(method, url) {
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+
+        xhr.onload = function () {
+            if(this.status >= 200 && this.status < 300){
+                resolve(xhr.response);
+            }else{
+                reject({
+                   status: this.status,
+                   statusText: xhr.statusText
+                });
+            }
+        };
+        xhr.onerror = function () {
+            reject({
+                status: this.status,
+                statusText: xhr.statusText
+            });
+        };
+        xhr.send();
+    });
+}
+getData('GET','https://jsonplaceholder.typicode.com/todos')
+    .then(function (data){
+        console.log(data);
+});
