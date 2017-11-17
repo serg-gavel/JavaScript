@@ -218,6 +218,20 @@ function getData(method, url) {
     });
 }
 getData('GET','https://jsonplaceholder.typicode.com/todos')
-    .then(function (data){
-        console.log(data);
+  .then(function (data){
+      let todos = JSON.parse(data);
+      let output = '';
+      for(let todo of todos){
+          output+=`
+          <div>
+            <h3>${todo.title}</h3>
+            <p>Completed: ${todo.completed}</p>
+          </div>
+          `;
+      }
+      document.getElementById('template').innerHTML = output;
+}).catch(function (error) {
+    console.log(error);
 });
+
+// Generators
