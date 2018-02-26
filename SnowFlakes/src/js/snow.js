@@ -40,7 +40,19 @@ window.onload = function () {
     function moveFlakes() {
         angle += 0.01;
         for(var i = 0; i < maximumFlakes; i++){
+            var fl = flakes[i];
 
+            fl.y += Math.pow(fl.d, 2) + 1;
+            fl.x += Math.sin(angle) * 2;
+
+            if(fl.y > windowHeight){
+                flakes[i] = {
+                    x: Math.random() * windowWidth,
+                    y: 0,
+                    r: fl.r,
+                    d: fl.d
+                }
+            }
         }
     }
 
