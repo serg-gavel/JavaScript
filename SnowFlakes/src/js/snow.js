@@ -15,7 +15,7 @@ window.onload = function () {
         flakes.push({
             x: Math.random()* windowWidth,
             y: Math.random()* windowHeight,
-            r: Math.random()* 5 + 2, // min 2px and max 7px of flakes radius
+            r: Math.random()* 3 + 2, // min 2px and max 7px of flakes radius
             d: Math.random() + 1 // density of the flakes
         })
     }
@@ -55,5 +55,7 @@ window.onload = function () {
             }
         }
     }
+
+    setInterval(drawFlakes, 35);
 
 };
