@@ -10,7 +10,6 @@ function updateTimer(deadline) {
     };
 }
 
-
 function animateClock(unitElement){
     unitElement.className = "turn";
     setTimeout(function(){
