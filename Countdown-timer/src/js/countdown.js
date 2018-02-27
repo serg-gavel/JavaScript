@@ -15,7 +15,7 @@ function animateClock(unitElement){
     unitElement.className = "turn";
     setTimeout(function(){
         unitElement.className = "";
-    },700);
+    },800);
 }
 
 function startTimer(id, deadline) {
@@ -31,7 +31,7 @@ function startTimer(id, deadline) {
                            `;
 
         // animation
-        var unitElements = clock.getElementsByClassName('span-units');
+        var unitElements = clock.getElementsByTagName("span");
         animateClock(unitElements[3]);
         if(timer.seconds === 59) animateClock(unitElements[2]);
         if(timer.minutes === 59 && timer.seconds === 59) animateClock(unitElements[1]);
